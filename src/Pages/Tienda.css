@@ -1,0 +1,613 @@
+.tienda-vmx {
+    width: min(1100px, 92%);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 55px 35px;
+
+    background-color: white;
+    color: #252525;
+
+    box-sizing: border-box;
+}
+
+/* PORTADA */
+.tienda-vmx-portada {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 50px;
+}
+
+.tienda-vmx-portada h1 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.tienda-vmx-portada h2 {
+    font-size: 21px;
+    color: #c49a45;
+    margin-bottom: 20px;
+}
+
+.tienda-vmx-portada p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* SECCIONES */
+
+.tienda-vmx-seccion {
+    margin-bottom: 65px;
+}
+
+.tienda-vmx-encabezado-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 18px;
+    margin-bottom: 28px;
+}
+
+.tienda-vmx-encabezado-seccion span:first-child {
+    color: #c62828;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tienda-vmx-encabezado-seccion h2 {
+    font-size: 27px;
+    margin: 7px 0;
+}
+
+.tienda-vmx-encabezado-seccion p {
+    color: #777;
+    margin: 0;
+    font-size: 14px;
+}
+
+.tienda-vmx-contador {
+    color: #777;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* GRID DE PRODUCTOS */
+
+.tienda-vmx-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS */
+
+.tienda-vmx-producto {
+    background: #191b1f;
+    color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #292b30;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.09);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.tienda-vmx-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.16);
+}
+
+.tienda-vmx-imagen-contenedor {
+    height: 220px;
+    background: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tienda-vmx-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tienda-vmx-producto:hover .tienda-vmx-imagen {
+    transform: scale(1.04);
+}
+
+.tienda-vmx-disponibilidad {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+}
+
+.tienda-vmx-disponibilidad.disponible {
+    background: #287a4b;
+}
+
+.tienda-vmx-disponibilidad.agotado {
+    background: #a52a2a;
+}
+
+.tienda-vmx-info-producto {
+    padding: 20px;
+}
+
+.tienda-vmx-info-producto h3 {
+    font-size: 17px;
+    margin: 0 0 10px;
+    min-height: 42px;
+}
+
+.tienda-vmx-descripcion {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #c4c4c4;
+    min-height: 62px;
+    margin-bottom: 20px;
+}
+
+.tienda-vmx-pie-producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid #37393e;
+    padding-top: 16px;
+}
+
+.tienda-vmx-precio {
+    color: #ff5555;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tienda-vmx-boton {
+    background: #c62828;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 13px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.tienda-vmx-boton:hover {
+    background: #a51e1e;
+}
+
+/* VENTANA MODAL */
+
+.tienda-vmx-modal-fondo {
+    position: fixed;
+    inset: 85px 0 0;
+    z-index: 900;
+    background: rgba(0, 0, 0, 0.68);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.tienda-vmx-modal {
+    position: relative;
+    width: min(850px, 100%);
+    max-height: calc(100% - 20px);
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    color: #252525;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tienda-vmx-modal-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    z-index: 2;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: #252525;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.tienda-vmx-modal-imagen {
+    width: 100%;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.tienda-vmx-modal-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.tienda-vmx-modal-info {
+    padding: 45px 30px 30px;
+}
+
+.tienda-vmx-modal-etiqueta {
+    color: #c62828;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tienda-vmx-modal-info h2 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.tienda-vmx-modal-precio {
+    font-size: 25px;
+    font-weight: bold;
+    color: #c62828;
+}
+
+.tienda-vmx-modal-descripcion {
+    color: #666;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.tienda-vmx-modal-stock {
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.tienda-vmx-modal-boton,
+.tienda-vmx-modal-volver {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.tienda-vmx-modal-boton {
+    border: none;
+    background: #c62828;
+    color: white;
+}
+
+.tienda-vmx-modal-boton:hover {
+    background: #a51e1e;
+}
+
+.tienda-vmx-modal-boton:disabled {
+    background: #888;
+    cursor: not-allowed;
+}
+
+.tienda-vmx-modal-volver {
+    background: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.tienda-vmx-modal-volver:hover {
+    background: #eeeeee;
+}
+
+/* MENSAJE DEL PEDIDO */
+
+.tienda-vmx-mensaje {
+    padding: 25px;
+    margin: 30px 0;
+    background: #f5f5f5;
+    border-left: 4px solid #287a4b;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .tienda-vmx-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tienda-vmx-modal {
+        width: min(700px, 100%);
+    }
+
+    .tienda-vmx-modal-info {
+        padding: 40px 22px 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tienda-vmx {
+        padding: 30px 0;
+    }
+
+    .tienda-vmx-portada {
+        padding: 30px 5px 45px;
+    }
+
+    .tienda-vmx-portada h2 {
+        font-size: 16px;
+    }
+
+    .tienda-vmx-encabezado-seccion {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .tienda-vmx-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tienda-vmx-imagen-contenedor {
+        height: 230px;
+    }
+
+    .tienda-vmx-modal-fondo {
+        inset: 75px 0 0;
+        padding: 12px;
+    }
+
+    .tienda-vmx-modal {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .tienda-vmx-modal-imagen {
+        min-height: 210px;
+        height: 210px;
+    }
+
+    .tienda-vmx-modal-info {
+        padding: 25px 20px;
+    }
+
+    .tienda-vmx-modal-info h2 {
+        font-size: 21px;
+    }
+}
+
+
+/* VENTANA FLOTANTE DEL FORMULARIO */
+
+.tienda-vmx-formulario-fondo {
+    position: fixed;
+    inset: 85px 0 0;
+    z-index: 900;
+    background: rgba(0, 0, 0, 0.68);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.tienda-formulario {
+    position: relative;
+    width: min(500px, 100%);
+    max-height: 100%;
+    overflow-y: auto;
+    background: #ffffff;
+    color: #252525;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tienda-formulario h2 {
+    color: #222222;
+    font-size: 25px;
+    margin: 0 35px 20px 0;
+}
+
+.tienda-formulario p {
+    color: #555555;
+    line-height: 1.6;
+}
+
+.tienda-formulario label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.tienda-formulario input,
+.tienda-formulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.tienda-formulario input:focus,
+.tienda-formulario select:focus {
+    outline: none;
+    border-color: #c62828;
+}
+
+.tienda-formulario input:disabled,
+.tienda-formulario select:disabled {
+    background: #eeeeee;
+    cursor: not-allowed;
+}
+
+.tienda-vmx-formulario-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: #252525;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.tienda-vmx-formulario-cerrar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tienda-total {
+    margin: 22px 0;
+    color: #c62828 !important;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.tienda-boton {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #c62828;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tienda-boton:hover {
+    background: #a51e1e;
+}
+
+.tienda-boton:disabled {
+    background: #888888;
+    cursor: not-allowed;
+}
+
+.tienda-boton.tienda-vmx-cancelar {
+    background: #555555;
+}
+
+.tienda-boton.tienda-vmx-cancelar:hover {
+    background: #333333;
+}
+
+/* CÍRCULO DE CARGA */
+.tienda-vmx-cargando {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tienda-vmx-circulo {
+    width: 17px;
+    height: 17px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: tienda-girar 0.8s linear infinite;
+}
+
+@keyframes tienda-girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* VENTANA DE CONFIRMACIÓN */
+.tienda-vmx-confirmacion {
+    width: min(500px, 100%);
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 35px;
+    background: white;
+    color: #252525;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tienda-vmx-icono-exito {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e4f5e9;
+    color: #287a4b;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.tienda-vmx-confirmacion h2 {
+    color: #287a4b;
+    font-size: 23px;
+}
+
+.tienda-vmx-confirmacion p {
+    line-height: 1.7;
+    color: #555555;
+}
+
+.tienda-vmx-resumen {
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    text-align: left;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+}
+
+.tienda-vmx-aclaracion {
+    font-size: 12px;
+    color: #777777 !important;
+}
+
+@media (max-width: 600px) {
+    .tienda-vmx-formulario-fondo {
+        inset: 75px 0 0;
+        padding: 12px;
+    }
+
+    .tienda-formulario,
+    .tienda-vmx-confirmacion {
+        padding: 25px 20px;
+    }
+
+    .tienda-formulario h2 {
+        font-size: 21px;
+    }
+}

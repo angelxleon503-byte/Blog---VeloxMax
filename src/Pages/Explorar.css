@@ -1,0 +1,380 @@
+.pagina-explorar {
+    padding: 50px;
+}
+
+
+.explorar-introduccion {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.explorar-introduccion h2 {
+    color: #222;
+    font-size: 34px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.explorar-introduccion h3 {
+    color: #c49a45;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.explorar-introduccion p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* articulo destacado*/
+
+.explorar-destacado {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: #17191d;
+    color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 70px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.destacado-imagen {
+    min-height: 350px;
+    overflow: hidden;
+}
+
+.destacado-imagen img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.explorar-destacado:hover .destacado-imagen img {
+    transform: scale(1.04);
+}
+
+.destacado-contenido {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.destacado-etiqueta {
+    background: #c49a45;
+    color: #17191d;
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.destacado-contenido h2 {
+    font-size: 26px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.destacado-contenido p {
+    color: #d0d0d0;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.destacado-enlace {
+    display: inline-block;
+    color: #c49a45;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.destacado-enlace span {
+    margin-left: 5px;
+    transition: margin-left 0.3s ease;
+}
+
+.destacado-enlace:hover {
+    color: white;
+}
+
+.destacado-enlace:hover span {
+    margin-left: 10px;
+}
+
+
+/* titulos secciones*/
+
+.explorar-titulo-seccion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.explorar-titulo-seccion h2 {
+    color: #222;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.explorar-titulo-seccion p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* articulos */
+
+.explorar-articulos {
+    margin-bottom: 75px;
+}
+
+.articulos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.articulo-explorar {
+    background: #fff;
+    border: 1px solid #e5e0d6;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articulo-explorar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.articulo-explorar-imagen {
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+}
+
+.articulo-explorar-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.articulo-explorar:hover .articulo-explorar-imagen img {
+    transform: scale(1.06);
+}
+
+.etiqueta-explorar {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #c49a45;
+    color: #17191d;
+    padding: 7px 11px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.articulo-explorar-contenido {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.articulo-explorar-contenido h3 {
+    color: #222;
+    font-size: 19px;
+    line-height: 1.4;
+    margin-bottom: 13px;
+}
+
+.articulo-explorar-contenido p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.enlace-explorar {
+    color: #a77b25;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: color 0.3s ease;
+}
+
+.enlace-explorar span {
+    margin-left: 5px;
+    transition: margin-left 0.3s ease;
+}
+
+.enlace-explorar:hover {
+    color: #222;
+}
+
+.enlace-explorar:hover span {
+    margin-left: 10px;
+}
+
+
+/* categorias */
+
+.explorar-categorias {
+    margin-top: 20px;
+}
+
+.categorias-explorar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.categoria-explorar {
+    background: #fff;
+    border: 1px solid #e5e0d6;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-explorar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.categoria-explorar-imagen {
+    height: 190px;
+    overflow: hidden;
+}
+
+.categoria-explorar-imagen img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.categoria-explorar:hover .categoria-explorar-imagen img {
+    transform: scale(1.06);
+}
+
+.categoria-explorar-contenido {
+    padding: 22px;
+}
+
+.categoria-explorar-contenido h3 {
+    color: #222;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.categoria-explorar-contenido p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 17px;
+}
+
+.categoria-explorar-contenido ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.categoria-explorar-contenido li {
+    color: #555;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 5px;
+}
+
+
+/* tabletas */
+
+@media (max-width: 900px) {
+
+    .pagina-explorar {
+        padding: 35px;
+    }
+
+    .articulos-grid,
+    .categorias-explorar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .explorar-destacado {
+        grid-template-columns: 1fr;
+    }
+
+    .destacado-imagen,
+    .destacado-imagen img {
+        min-height: 300px;
+    }
+
+}
+
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .pagina-explorar {
+        padding: 25px 18px;
+    }
+
+    .explorar-introduccion h2 {
+        font-size: 27px;
+    }
+
+    .explorar-introduccion h3 {
+        font-size: 18px;
+    }
+
+    .explorar-introduccion p {
+        font-size: 14px;
+    }
+
+    .articulos-grid,
+    .categorias-explorar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destacado-imagen,
+    .destacado-imagen img {
+        min-height: 220px;
+    }
+
+    .destacado-contenido {
+        padding: 25px;
+    }
+
+    .destacado-contenido h2 {
+        font-size: 22px;
+    }
+
+    .explorar-titulo-seccion h2 {
+        font-size: 24px;
+    }
+
+}

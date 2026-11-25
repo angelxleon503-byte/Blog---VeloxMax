@@ -1,0 +1,1004 @@
+/* estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #222;
+    background-color: #0b0d10;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+
+.encabezado {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    width: 100%;
+    min-height: 64px;
+    padding: 0 4%;
+    background: #111214;
+}
+
+
+.logo {
+    flex-shrink: 0;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+    background: transparent;
+}
+
+.menu a {
+    display: block;
+    padding: 23px 14px;
+    color: #d0d0d0;
+    background: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+/* Efecto al pasar el cursor */
+
+.menu a:hover {
+    color: white;
+    background: #292b2f;
+}
+
+/* Sección activa */
+
+.menu a.active {
+    color: white;
+    background: #292b2f;
+}
+
+
+/* PORTADA PRINCIPAL*/
+
+.portada-inicio {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 590px;
+    height: 78vh;
+    max-height: 850px;
+    padding: 55px 5%;
+    color: white;
+    background-color: #20242a;
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05) 30%,
+        rgba(0, 0, 0, 0.75) 100%
+    ),
+    url("/images/fondo3.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.portada-texto {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.titulo {
+    margin: 0 0 8px;
+    color: white;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+/* Eslogan */
+
+.subtitulo {
+    margin: 0;
+    color: #f0f0f0;
+    font-size: clamp(15px, 2vw, 21px);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+
+/* CONTENIDO GENERAL DE LAS PAGINAS*/
+
+.contenido,
+.tienda,
+.pagina {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 55px;
+    background: white;
+    color: #333;
+    border-radius: 0;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos de las páginas */
+
+.contenido h1,
+.contenido h2,
+.contenido h3,
+.tienda h1,
+.tienda h2,
+.tienda h3,
+.pagina h1,
+.pagina h2,
+.pagina h3 {
+    color: #20242a;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Párrafos */
+
+.contenido p,
+.tienda p,
+.pagina p {
+    line-height: 1.8;
+}
+
+/* Introducción de Inicio */
+
+.introduccion {
+    text-align: center;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+/* Avisos y aclaraciones */
+
+.aviso {
+    color: #0c0202;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Títulos de sección */
+
+.titulo-seccion {
+    margin: 45px 0 25px;
+    text-align: center;
+    color: #20242a;
+    font-size: 30px;
+}
+
+
+/* Contenedor exclusivo de la página del ranking */
+.ranking-pagina {
+    width: min(1180px, 94%);
+    margin: 35px auto;
+    padding: 45px;
+    background: #ffffff;
+    color: #222222;
+    border: 1px solid #dddddd;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* Título principal del ranking */
+.ranking-pagina .titulo-seccion {
+    margin: 0 0 35px;
+    color: #f5f5f5;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ranking-pagina .titulo-seccion::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    margin-top: 16px;
+    background: #e63946;
+    border-radius: 3px;
+}
+
+/* Tarjeta de cada automóvil */
+.ranking-pagina .auto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    margin: 0 0 30px;
+    padding: 26px;
+    background: #171b21;
+    color: #f5f5f5;
+    border: 1px solid #2a3039;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ranking-pagina .auto:hover {
+    border-color: rgba(230, 57, 70, 0.75);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* Encabezado: número, nombre y marca */
+.auto-encabezado {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: center;
+    gap: 18px;
+}
+
+.auto-numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    padding: 8px;
+    background: #e63946;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.auto-titulo {
+    min-width: 0;
+}
+
+.ranking-pagina .auto .auto-titulo h3 {
+    margin: 0 0 8px;
+    color: #f5f5f5;
+    font-size: clamp(22px, 2.8vw, 30px);
+    line-height: 1.2;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.auto-marca {
+    margin: 0;
+    color: #a7afba;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Fotografía del automóvil */
+.ranking-pagina .auto .auto-imagen {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: clamp(230px, 38vw, 430px);
+    max-height: none;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid #303741;
+    border-radius: 10px;
+    transition: transform 0.35s ease;
+}
+
+.ranking-pagina .auto:hover .auto-imagen {
+    transform: scale(1.01);
+}
+
+.auto-datos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.auto-dato {
+    min-width: 0;
+    padding: 17px 15px;
+    background: #101318;
+    border: 1px solid #2a3039;
+    border-radius: 9px;
+}
+
+.auto-dato-etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #a7afba;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.auto-dato-icono {
+    color: #e63946;
+    font-size: 17px;
+}
+
+.auto-dato-valor {
+    display: block;
+    color: #f5f5f5;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.auto-descripcion {
+    margin: 0;
+    padding-top: 18px;
+    color: #c2c8d0;
+    border-top: 1px solid #2a3039;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.auto-descripcion strong {
+    color: #f5f5f5;
+}
+
+.ranking-pagina > .frase-final {
+    margin-top: 45px;
+    padding: 30px 15px 10px;
+    color: #f5f5f5;
+    border-top: 1px solid #2a3039;
+    font-size: clamp(18px, 2.5vw, 24px);
+    line-height: 1.8;
+    text-align: center;
+    font-style: italic;
+}
+
+.ranking-pagina > .frase-final h2 {
+    margin: 0;
+    color: #f5f5f5;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Diseño adaptable del ranking */
+@media (max-width: 700px) {
+    .ranking-pagina {
+        width: 100%;
+        margin: 0 auto;
+        padding: 25px 16px;
+        border: none;
+        border-radius: 0;
+    }
+
+    .ranking-pagina .titulo-seccion {
+        margin-bottom: 25px;
+        font-size: 27px;
+    }
+
+    .ranking-pagina .auto {
+        gap: 17px;
+        margin-bottom: 22px;
+        padding: 17px;
+        border-radius: 11px;
+    }
+
+    .auto-encabezado {
+        grid-template-columns: 50px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .auto-numero {
+        min-height: 50px;
+        font-size: 24px;
+    }
+
+    .ranking-pagina .auto .auto-titulo h3 {
+        font-size: 21px;
+    }
+
+    .auto-marca {
+        font-size: 13px;
+    }
+
+    .ranking-pagina .auto .auto-imagen {
+        height: 240px;
+    }
+
+    .auto-datos {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .auto-dato {
+        padding: 13px;
+    }
+
+    .auto-dato-etiqueta {
+        margin-bottom: 5px;
+    }
+
+    .auto-dato-valor {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ranking-pagina .auto,
+    .ranking-pagina .auto .auto-imagen {
+        transition: none;
+    }
+
+    .ranking-pagina .auto:hover .auto-imagen {
+        transform: none;
+    }
+}
+
+
+/* PAGINA DE DATOS*/
+
+
+.datos {
+    margin-top: 30px;
+    padding: 25px 0;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.datos h2 {
+    color: #222;
+}
+
+.datos p {
+    line-height: 1.8;
+}
+
+
+/* TIENDA*/
+
+.tienda {
+    max-width: 1100px;
+}
+
+
+.tienda-portada {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url("/images/fondo-tienda.jpg");
+
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+}
+
+.tienda-portada h1 {
+    color: white;
+    font-size: 42px;
+}
+
+.tienda-portada p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Títulos de la tienda */
+
+.tienda-titulo {
+    margin: 45px 0 25px;
+    text-align: center;
+    color: #222;
+    font-size: 28px;
+}
+
+/* Distribución de los productos */
+
+.tienda-productos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+}
+
+
+.tienda-producto {
+    padding: 0 0 25px;
+    background: white;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.tienda-producto:hover {
+    border-color: #bbb;
+}
+
+
+.tienda-producto img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* Nombre del producto */
+.tienda-producto h3 {
+    padding: 0;
+    margin: 20px 0 10px;
+    color: #222;
+    font-size: 21px;
+}
+
+/* Precio */
+
+.tienda-precio {
+    color: #222;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Botones de la tienda */
+
+.tienda-boton {
+    margin: 8px 5px 8px 0;
+    padding: 12px 18px;
+    background: #252a32;
+    color: white;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tienda-boton:hover {
+    background: #505966;
+}
+
+
+/* ========================================
+   9. FORMULARIO DE PEDIDO
+======================================== */
+
+.tienda-formulario {
+    max-width: 550px;
+    margin: 40px auto 20px;
+    padding: 25px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.tienda-formulario h2 {
+    color: #222;
+    text-align: center;
+}
+
+.tienda-formulario label {
+    display: block;
+    margin: 15px 0 6px;
+}
+
+.tienda-formulario input,
+.tienda-formulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font-size: 15px;
+}
+
+/* Total del pedido */
+
+.tienda-total {
+    color: #222;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Mensajes de la tienda */
+
+.tienda-mensaje {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.tienda-mensaje h2 {
+    color: #222;
+}
+
+
+ /*PIE DE PAGINA */
+
+.pie {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: rgba(20, 23, 28, 0.95);
+    color: white;
+    text-align: center;
+}
+
+
+/* 11. EFECTO SOBRE LAS IMAGENES */
+
+.auto img,
+.tienda-producto img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auto img:hover,
+.tienda-producto img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* 12. DISEÑO PARA TELEFONOS Y TABLETAS */
+
+@media (max-width: 700px) {
+
+    /* Encabezado */
+
+    .encabezado {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px 10px 0;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    /* Menú */
+
+    .menu {
+        justify-content: center;
+        width: 100%;
+        gap: 0;
+    }
+
+    .menu a {
+        flex: 1 1 30%;
+        padding: 14px 5px;
+        text-align: center;
+        font-size: 11px;
+    }
+
+    /* Portada principal */
+
+    .portada-inicio {
+        min-height: 480px;
+        height: 72vh;
+        padding: 35px 6%;
+        background-position: center;
+    }
+
+    .portada-texto {
+        padding: 0;
+    }
+
+    .titulo {
+        font-size: clamp(36px, 10vw, 55px);
+        letter-spacing: 1px;
+    }
+
+    .subtitulo {
+        font-size: 15px;
+    }
+
+    /* Contenido de las páginas */
+
+    .contenido,
+    .tienda,
+    .pagina {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    /* Introducción */
+
+    .introduccion {
+        font-size: 16px;
+    }
+
+    /* Ranking */
+
+    .auto h3 {
+        font-size: 22px;
+    }
+
+    .auto img {
+        max-height: 320px;
+    }
+
+    /* Tienda */
+
+    .tienda-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .tienda-producto img {
+        height: 250px;
+    }
+
+    .tienda-portada h1 {
+        font-size: 32px;
+    }
+
+    .tienda-portada p {
+        font-size: 16px;
+    }
+
+    .tienda-formulario {
+        padding: 18px;
+    }
+}
+
+
+/* TARJETA CON LA FRASE DE AYRTON SENNA */
+
+/* Espacio entre la portada y la sección blanca */
+
+.inicio-contenido {
+    margin-top: 45px;
+}
+
+/* Tarjeta con imagen de fondo */
+
+.frase-tarjeta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 320px;
+    margin-bottom: 55px;
+    padding: 35px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    background-color: #20242a;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/images/frase.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Texto de la frase */
+
+.frase-tarjeta blockquote {
+    max-width: 750px;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+/* Párrafo */
+
+.frase-tarjeta p {
+    margin: 0 0 25px;
+    font-size: clamp(18px, 2.2vw, 25px);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* Autor */
+
+.frase-tarjeta cite {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+/* Adaptación para móviles */
+
+@media (max-width: 700px) {
+    .inicio-contenido {
+        margin-top: 25px;
+    }
+
+    .frase-tarjeta {
+        min-height: 300px;
+        margin-bottom: 35px;
+        padding: 25px 18px;
+    }
+
+    .frase-tarjeta p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .frase-tarjeta cite {
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================
+   INTRODUCCIÓN DE VELOXMAX
+======================================== */
+
+.introduccion h2 {
+    margin-bottom: 25px;
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.3;
+}
+
+.introduccion p {
+    margin-bottom: 20px;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.introduccion .frase-final {
+    margin: 30px 0;
+    padding-left: 18px;
+    border-left: 4px solid #c49a45;
+    font-size: 19px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* SECCIÓN EXPLORA NUESTRO SITIO */
+
+.explorar {
+    margin-top: 55px;
+    padding-top: 35px;
+    border-top: 1px solid #dedede;
+}
+
+.explorar h2 {
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: clamp(26px, 3vw, 35px);
+}
+
+.explorar-descripcion {
+    margin-bottom: 30px;
+    color: #666;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Distribución de las tarjetas */
+
+.explorar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Apariencia de cada tarjeta */
+
+.explorar-tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 225px;
+    padding: 25px;
+    border: 2px solid #c9a27e;
+    border-radius: 12px;
+    background-color: #fff;
+    color: #252525;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Título de la tarjeta */
+
+.explorar-tarjeta h3 {
+    margin: 0 0 15px;
+    font-size: 22px;
+    color: #17191d;
+}
+
+/* Descripción */
+
+.explorar-tarjeta p {
+    margin: 0 0 20px;
+    color: #5e5e5e;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+/* Texto inferior */
+
+.explorar-tarjeta span {
+    color: #a77b25;
+    font-weight: bold;
+}
+
+/* Efecto al pasar el cursor */
+
+.explorar-tarjeta:hover {
+    transform: translateY(-7px);
+    border-color: #c49a45;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+/* Efecto al presionar */
+
+.explorar-tarjeta:active {
+    transform: translateY(-2px);
+}
+
+/* DISEÑO PARA TABLET Y CELULAR */
+
+@media (max-width: 900px) {
+    .explorar-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .introduccion h2 {
+        font-size: 26px;
+    }
+
+    .introduccion p {
+        font-size: 16px;
+    }
+
+    .explorar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explorar-tarjeta {
+        min-height: 190px;
+    }
+}
